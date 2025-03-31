@@ -1,0 +1,487 @@
+/* 修复样式冲突问题 */
+/* 全局样式 */
+body {
+    font-family: "SF Pro Text", "SF Pro Icons", "PingFang SC", "Microsoft YaHei", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 22px;
+    line-height: 1.5;
+    color: #333;
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* 重置Bootstrap样式 */
+.container {
+    width: 100%;
+    max-width: 1280px;
+    padding: 0 30px;
+}
+
+/* 导航栏样式 - 苹果风格 */
+#header, #header-top {
+    background: white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+#header-top {
+    display: none;
+}
+
+#header {
+    top: 0;
+    position: fixed;
+}
+
+.navbar {
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 0;
+    min-height: 80px;
+}
+
+.navbar-default {
+    border: none;
+}
+
+.navbar-brand {
+    height: auto;
+    padding: 10px 0;
+}
+
+.logo img {
+    height: 60px;
+    margin: 10px 0;
+}
+
+.navbar-default .navbar-nav > li > a {
+    font-size: 20px;
+    font-weight: 500;
+    color: #000;
+    padding: 30px 25px;
+    letter-spacing: -0.01em;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: #2563eb;
+    background-color: transparent;
+}
+
+.navbar-nav {
+    margin-top: 10px;
+}
+
+/* 头部用户操作区 */
+.header-top-left, .header-top-right {
+    display: flex;
+    align-items: center;
+}
+
+.header-top-right ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.header-top-contact a {
+    font-size: 14px;
+    padding: 0 15px;
+    color: #333;
+}
+
+/* 顶部区域样式 */
+.top-area {
+    background: linear-gradient(135deg, #1a237e, #283593);
+    padding: 220px 0 180px;
+    color: white;
+    text-align: center;
+    margin-top: 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+.top-area:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="none"/><path d="M0,50 L100,50 M50,0 L50,100" stroke="rgba(255,255,255,0.05)" stroke-width="1" stroke-dasharray="5,5"/></svg>');
+    background-size: 50px 50px;
+}
+
+/* 添加科技感粒子和网格效果 */
+.top-area:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px),
+        radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size: 30px 30px, 90px 90px;
+    background-position: 0 0, 15px 15px;
+    animation: backgroundMove 60s linear infinite;
+}
+
+@keyframes backgroundMove {
+    0% { background-position: 0 0, 15px 15px; }
+    100% { background-position: 1000px 1000px, 1015px 1015px; }
+}
+
+/* 添加浮动小圆点效果 */
+.top-area .floating-dots {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+.floating-dot {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    animation: float 15s infinite ease-in-out;
+}
+
+.floating-dot:nth-child(1) {
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.floating-dot:nth-child(2) {
+    top: 50%;
+    left: 20%;
+    animation-delay: 2s;
+}
+
+.floating-dot:nth-child(3) {
+    top: 30%;
+    left: 85%;
+    animation-delay: 4s;
+}
+
+.floating-dot:nth-child(4) {
+    top: 70%;
+    left: 80%;
+    animation-delay: 6s;
+}
+
+.floating-dot:nth-child(5) {
+    top: 15%;
+    left: 60%;
+    animation-delay: 8s;
+}
+
+.floating-dot:nth-child(6) {
+    top: 75%;
+    left: 30%;
+    animation-delay: 10s;
+}
+
+@keyframes float {
+    0% { transform: translateY(0) translateX(0); }
+    25% { transform: translateY(-20px) translateX(10px); }
+    50% { transform: translateY(0) translateX(20px); }
+    75% { transform: translateY(20px) translateX(10px); }
+    100% { transform: translateY(0) translateX(0); }
+}
+
+.banner-text h2 {
+    font-size: 72px;
+    font-weight: 800;
+    margin-bottom: 30px;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    color: #ffffff;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    position: relative;
+    z-index: 2;
+}
+
+.banner-text p {
+    font-size: 32px;
+    font-weight: 400;
+    margin-bottom: 50px;
+    color: rgba(255, 255, 255, 0.95);
+    position: relative;
+    z-index: 2;
+}
+
+.banner-btn .btn {
+    padding: 18px 45px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 22px;
+    margin: 0 15px;
+    transition: all 0.3s ease;
+    letter-spacing: -0.01em;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.btn-primary {
+    background: white;
+    color: #1a237e;
+    border: none;
+}
+
+.btn-primary:hover {
+    background: rgba(255,255,255,0.9);
+    color: #1a237e;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.btn-default {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    border: none;
+    backdrop-filter: blur(10px);
+}
+
+.btn-default:hover {
+    background: rgba(255,255,255,0.25);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* 工具和资源卡片样式 */
+.section-padding {
+    padding: 140px 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 90px;
+}
+
+.section-header h2 {
+    font-size: 56px;
+    font-weight: 800;
+    color: #000;
+    margin-bottom: 25px;
+    position: relative;
+    display: inline-block;
+    letter-spacing: -0.02em;
+}
+
+.section-header h2:after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 4px;
+    background: #2c5ae9;
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+.section-header p {
+    font-size: 24px;
+    color: #666;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    letter-spacing: -0.01em;
+}
+
+.single-tool, .single-resource {
+    background: white;
+    border-radius: 24px;
+    padding: 50px;
+    margin-bottom: 50px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.07);
+    transition: all 0.4s ease;
+    height: 100%;
+    border: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.single-tool:hover, .single-resource:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.1);
+}
+
+.tool-icon, .resource-icon {
+    width: 90px;
+    height: 90px;
+    background: #f0f4ff;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 35px;
+    transition: all 0.3s ease;
+}
+
+.single-tool:hover .tool-icon, .single-resource:hover .resource-icon {
+    transform: scale(1.05);
+    background: #eef1ff;
+}
+
+.tool-icon i, .resource-icon i {
+    font-size: 42px;
+    color: #2c5ae9;
+}
+
+.single-tool h3, .single-resource h3 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #111;
+    letter-spacing: -0.01em;
+}
+
+.single-tool ul, .single-resource ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.single-tool ul li, .single-resource ul li {
+    margin-bottom: 35px;
+    border-bottom: 1px solid #f5f5f7;
+    padding-bottom: 35px;
+    transition: all 0.3s ease;
+}
+
+.single-tool ul li:last-child, .single-resource ul li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.tool-link, .resource-link {
+    display: block;
+}
+
+.tool-link a, .resource-link a {
+    color: #000;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 28px;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 15px;
+    letter-spacing: -0.01em;
+}
+
+.tool-link a:before, .resource-link a:before {
+    content: '';
+    display: none;
+}
+
+.tool-link a:hover, .resource-link a:hover {
+    color: #2c5ae9;
+}
+
+.tool-description, .resource-description {
+    font-size: 20px;
+    color: #555;
+    line-height: 1.6;
+    margin-top: 8px;
+    margin-left: 0;
+    letter-spacing: -0.01em;
+}
+
+/* 页脚样式 */
+.footer {
+    background: #f5f5f7;
+    padding: 60px 0;
+    margin-top: 0;
+    color: #666;
+}
+
+.footer-text p {
+    margin: 0;
+    font-size: 16px;
+    color: #999;
+}
+
+.bg-light {
+    background-color: #f8fafc !important;
+}
+
+/* 修复响应式问题 */
+@media (max-width: 992px) {
+    .banner-text h2 {
+        font-size: 56px;
+    }
+    
+    .section-header h2 {
+        font-size: 42px;
+    }
+    
+    .tool-link a, .resource-link a {
+        font-size: 26px;
+    }
+}
+
+@media (max-width: 768px) {
+    #header {
+        top: 0;
+    }
+    
+    #header-top {
+        display: none;
+    }
+    
+    .top-area {
+        margin-top: 70px;
+        padding: 140px 0 120px;
+    }
+    
+    .banner-text h2 {
+        font-size: 42px;
+    }
+    
+    .banner-text p {
+        font-size: 22px;
+    }
+    
+    .banner-btn .btn {
+        display: block;
+        margin: 15px auto;
+        max-width: 300px;
+        font-size: 20px;
+        padding: 16px 30px;
+    }
+    
+    .section-header h2 {
+        font-size: 36px;
+    }
+    
+    .single-tool h3, .single-resource h3 {
+        font-size: 28px;
+    }
+    
+    .tool-link a, .resource-link a {
+        font-size: 24px;
+    }
+    
+    .tool-description, .resource-description {
+        font-size: 18px;
+    }
+} 
